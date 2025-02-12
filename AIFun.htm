@@ -1,0 +1,383 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Inbox</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f3f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 256px;
+            background-color: #fff;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 64px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .sidebar-header img {
+            margin-right: 8px;
+        }
+        .sidebar-content {
+            padding: 16px;
+            flex: 1;
+        }
+        .compose-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 48px;
+            background-color: #1a73e8;
+            color: #fff;
+            border-radius: 24px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        .compose-button i {
+            margin-right: 8px;
+        }
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+        .sidebar-menu li.active {
+            background-color: #e8f0fe;
+            color: #1a73e8;
+        }
+        .sidebar-menu li i {
+            margin-right: 12px;
+        }
+        .sidebar-menu li span {
+            margin-left: auto;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .labels {
+            margin-top: 16px;
+        }
+        .labels h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #5f6368;
+            margin-bottom: 8px;
+        }
+        .labels button {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            color: #5f6368;
+        }
+        .labels button i {
+            margin-right: 12px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .header input {
+            padding: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 24px;
+            width: 256px;
+        }
+        .header .icons {
+            display: flex;
+            align-items: center;
+        }
+        .header .icons i {
+            margin-right: 16px;
+            cursor: pointer;
+        }
+        .header .icons img {
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .tabs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .tabs .tab {
+            display: flex;
+            align-items: center;
+            padding-bottom: 8px;
+            cursor: pointer;
+        }
+        .tabs .tab.active {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+        }
+        .tabs .tab i {
+            margin-right: 8px;
+        }
+        .tabs .tab span {
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            font-size: 12px;
+            border-radius: 12px;
+            padding: 2px 8px;
+            margin-left: 8px;
+        }
+        .email-list {
+            flex: 1;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+        .email-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .email-list tr {
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+        }
+        .email-list tr:hover {
+            background-color: #f1f3f4;
+        }
+        .email-list td {
+            padding: 12px 16px;
+        }
+        .email-list td i {
+            color: #5f6368;
+        }
+        .email-list td .font-medium {
+            font-weight: 500;
+        }
+        .email-list td .text-gray-600 {
+            color: #5f6368;
+        }
+        .email-list td.text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://storage.googleapis.com/a1aa/image/JXXl759rA-jdDkSODj3dDPT4DufqaMMpfTKCXuiV1jY.jpg" alt="Gmail logo" width="24" height="24">
+            <span>Gmail</span>
+        </div>
+        <div class="sidebar-content">
+            <div class="compose-button">
+                <i class="fas fa-pencil-alt"></i>
+                Compose
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <i class="fas fa-inbox"></i>
+                    Inbox
+                    <span>1,486</span>
+                </li>
+                <li>
+                    <i class="fas fa-star"></i>
+                    Starred
+                </li>
+                <li>
+                    <i class="fas fa-clock"></i>
+                    Snoozed
+                </li>
+                <li>
+                    <i class="fas fa-paper-plane"></i>
+                    Sent
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    Drafts
+                </li>
+                <li>
+                    <i class="fas fa-ellipsis-v"></i>
+                    More
+                </li>
+            </ul>
+            <div class="labels">
+                <h2>Labels</h2>
+                <button>
+                    <i class="fas fa-plus"></i>
+                    Create new label
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search mail">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                <i class="fas fa-cog"></i>
+                <i class="fas fa-th"></i>
+                <img src="https://storage.googleapis.com/a1aa/image/muhx002dun-hjnhofVXzXO90ylvrHE_Ogxvu7_dcKjY.jpg" alt="User avatar" width="32" height="32">
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab active">
+                <i class="fas fa-inbox"></i>
+                Primary
+            </div>
+            <div class="tab">
+                <i class="fas fa-tag"></i>
+                Promotions
+                <span>23 new</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-users"></i>
+                Social
+                <span>22 new</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-info-circle"></i>
+                Updates
+                <span>50 new</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+        <div class="email-list">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">matt.mcdougall@hack.</span></td>
+                        <td><span class="text-gray-600">Just a few follow-up questions - Developer Skills Survey - Addendum Thank you for participating in our Developer Skills Survey at th...</span></td>
+                        <td class="text-right"><span class="text-gray-600">00:07</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Smytten</span></td>
+                        <td><span class="text-gray-600">Your mail from Cupid is here 🥰❤️ - FREEBIES 🎁, 90% OFF & more at Get Smytten Sale. 👉🏼</span></td>
+                        <td class="text-right"><span class="text-gray-600">5 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Quora Digest</span></td>
+                        <td><span class="text-gray-600">Why are lobsters boiled alive? - Mostly because lobsters have multiple “brains” (ganglia) throughout their bodies. Assuming that lob...</span></td>
+                        <td class="text-right"><span class="text-gray-600">5 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Minimalist</span></td>
+                        <td><span class="text-gray-600">So, what do you think? - Hi Vansh! We wanted to check in and see how you are enjoying your latest purchase from Minimalist. If you h...</span></td>
+                        <td class="text-right"><span class="text-gray-600">5 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">boAt Email (no-repl.</span></td>
+                        <td><span class="text-gray-600">53726990: Status of warranty claim for the product Boat Rockerz 551 ANC Stellar Black - Dear customer, We are pleased to inform...</span></td>
+                        <td class="text-right"><span class="text-gray-600">5 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Quora Digest</span></td>
+                        <td><span class="text-gray-600">My neighbour keeps on watching me through her window. Every time I look at her, she h...? - When i was young a male neighbor...</span></td>
+                        <td class="text-right"><span class="text-gray-600">4 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">boAt Email (no-repl. 2</span></td>
+                        <td><span class="text-gray-600">53726990: Status of warranty claim for the product Boat Rockerz 551 ANC Stellar Black - Dear customer, We are happy to inform...</span></td>
+                        <td class="text-right"><span class="text-gray-600">3 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Quora Digest</span></td>
+                        <td><span class="text-gray-600">I am 13 and my dad still doesn't let me shower on my own. What should I do? - If your dad is still insisting on coming into the show...</span></td>
+                        <td class="text-right"><span class="text-gray-600">3 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">PhonePe</span></td>
+                        <td><span class="text-gray-600">Sent ₹ 20000 to Balram Kushwah - PhonePe Feb 3, 2025 Paid to Balram Kushwah ₹ 20000 Txn. ID : T2502031229422381654457 Txn...</span></td>
+                        <td class="text-right"><span class="text-gray-600">3 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Quora Digest</span></td>
+                        <td><span class="text-gray-600">If Aryabhatta invented 0 then how do we know that Ravana had 10 heads? - If Aryabhatta discovered zero, how could people in R...</span></td>
+                        <td class="text-right"><span class="text-gray-600">3 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Groww Digest</span></td>
+                        <td><span class="text-gray-600">Dynamite, Nobel prize, & tech evolution - Your weekly all-things-finance newsletter</span></td>
+                        <td class="text-right"><span class="text-gray-600">2 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Quora Digest</span></td>
+                        <td><span class="text-gray-600">Is it good for a brother and sister to live together? - In my experience yes. My twin brother and I shared an apartment and a bedro...</span></td>
+                        <td class="text-right"><span class="text-gray-600">2 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">boAt Email (no-repl. 2</span></td>
+                        <td><span class="text-gray-600">53726990: Status of warranty claim for the product Boat Rockerz 551 ANC Stellar Black - Dear customer, We are happy to inform...</span></td>
+                        <td class="text-right"><span class="text-gray-600">2 Feb</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><i class="far fa-star"></i></td>
+                        <td><span class="font-medium">Payments</span></td>
+                        <td><span class="text-gray-600">RRN update for refund tracking - OLA STORES TECHNOLOGIES PRIVATE LIMITED 830525670325 RRN for refund ID: rfnd PqE3lsNXQ...</span></td>
+                        <td class="text-right"><span class="text-gray-600">2 Feb</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

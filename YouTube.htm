@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Tube</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="Public/Images/You Tube/YT_icon.ico">
+    <style>
+        body{
+            background-color: rgb(16, 14, 14);
+        }
+        header{
+            position: fixed;
+            color: white;
+            display: flex;
+            margin-left: 30px;   
+        }
+        .bi-list{
+            font-size: 25px;
+            margin-left: -15px;
+            position: absolute;
+            top: 5px;
+            cursor: pointer;
+        }
+        .brand{
+            display: flex;
+            padding-left: 30px;
+            padding-top: 6px;
+            cursor: pointer;
+        }
+        .Logo img{
+            width: 33px;
+            height: 23px;
+            cursor: pointer;
+        }
+        h4{
+            font-size: 20px;
+            transform: scaleY(1.2);
+            margin-top: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: -1px;
+            padding-left: 2px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        .IN{
+            font-size: 10px;
+            padding-left: 3px;
+            letter-spacing: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(196, 194, 194);
+        }
+        .Search-bar img{
+            padding-left: 235px;
+            margin-top: -5px;
+            height: 54px;
+            width: 640px;
+        }
+        .bi-mic-fill{
+            display: inline-block;
+            font-size: 20px;
+            height: 33px;
+            width: 33px;
+            border-radius: 50px;
+            background-color: rgb(74, 72, 72);
+            padding-left: 12px;
+            padding-top: 11px;
+            position: absolute;
+            top: -2px;
+            right: -55px;
+            cursor: pointer;
+        }
+        .create{
+            font-size: 20px;
+            margin-top: 100px;
+            cursor: pointer;
+        }
+        .Profile-logo{
+            background-color: rgb(46, 161, 243);
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-flex;
+            height: 35px;
+            width: 30px;
+            padding-left: 15px;
+            padding-top: 10px;
+            border-radius: 200px;
+            margin-left: 90px;
+            position: absolute;
+            top: -1px;
+            right: -430px;
+            cursor: pointer;
+        }
+        .bi-camera-video{
+            position: absolute;
+            top: 5px;
+            right: -290px;
+            cursor: pointer;
+        }
+        .bi-bell{
+            position: absolute;
+            top: 5px;
+            right: -350px;
+            cursor: pointer;
+        }
+        .section1{
+            padding-top: 40px;
+            color: white;
+            position: absolute;
+            left: 24px;
+        }
+        .section1 img{
+            width: 25px;
+            cursor: pointer;
+        }
+        .section1 div{
+            padding-top: 15px;
+        }
+        #home{
+            position: relative;
+            top: -6px;
+            padding-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #creators{
+            position: relative;
+            top: -8px;
+            padding-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .you{
+            margin-top: -15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .Explore{
+            margin-top: -15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        .Subscription{
+            margin-top: -15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        hr{
+            width: 200px;
+            border: 1px solid rgb(40, 35, 35);
+        }
+        main{
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+        }
+        .banner img{
+            width: 1100px;
+            height: 190px;
+            padding-top: 50px;
+            padding-left: 300px;
+        }
+        .section3{
+            margin-left: -6px;
+        }
+        .brand-name{
+            display: block;
+            margin-top: 245px;
+            margin-left: -1070px;
+            color: white;
+            background-color: black;
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+        }
+        .brand-name img{
+            width: 35px;
+            padding-top: 55px;
+            padding-left: 15px;
+        }
+        .p1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            padding-left: 50px;
+            margin-top: -32px;
+        }
+        .p2{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            padding-left: 50px;
+            margin-top: -12px;
+            letter-spacing: 1px;
+        }
+        .pwioi{
+            margin-left: -905px;
+            margin-top: -150px;
+            color: white;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .subs{
+            margin-left: -905px;
+            margin-top: 5px;
+            color: grey;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .about{
+            margin-left: -903px;
+            margin-top: 10px;
+            color: grey;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .more{
+            color: white;
+            cursor: pointer;
+        }
+        .links{
+            margin-left: -902px;
+            margin-top: 10px;
+            color: white;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(121, 181, 255);
+        }
+        .bi-bell-fill{
+            margin-left: -902px;
+            margin-top: 10px;
+            color: white;
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(40, 33, 33);
+            padding-left: 12px;
+            padding-top: 7px;
+            width: 146px;
+            height: 28px;
+            border-radius: 20px;
+        }
+        .bi-caret-down{
+            position: absolute;
+            top: 394px;
+            left: 625px;
+        }
+        #chevron-down{
+            position: absolute;
+            top: 924px;
+            left: 2px;
+            font-size: 18px;
+        }
+        #Show{
+            position: relative;
+            top: -6px;
+            padding-left: 49px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #content{
+            color: grey;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin-left: -225px;
+            position: sticky;
+        }
+        .content{
+            color: rgb(145, 144, 144);
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 280px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .content span{
+            padding-left: 28px;
+        }
+        .bi-search{
+            font-size: 20px;
+        }
+        .hr2{
+            width: 1270px;
+            margin-left: 240px;
+        }
+        .section5{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 240px;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .section5 iframe{
+            border: 1px solid black;
+            margin-right: 10px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .shorts1{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .hr3{
+            width: 1180px;
+            margin-right: 90px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <span class="bi bi-list"></span>
+        </div>
+        <div class="brand">
+            <span class="Logo"><img src="Public/Images/You Tube/YT_Logo.PNG" alt="Youtube Logo"></span>
+            <h4>YouTube</h4>
+            <span class="IN">IN</span>
+        </div>
+        <div id="search">
+            <span class="Search-bar"><img src="Public/Images/You Tube/Search-Bar.png" alt="Search Bar"></span>
+            <span class="bi bi-mic-fill"></span>
+        </div>
+        <div class="create">
+            <span class="bi bi-camera-video"></span>
+            <span class="bi bi-bell"></span>
+            <span class="Profile-logo">V</span>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="home">
+                <div>
+                    <span><img src="Public/Images/You Tube/home.png" title="Home"></span>
+                    <span id="home">Home</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/Shorts.png" title="Shorts"></span>
+                    <span id="home">Shorts</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/Subscription.png" title="Subscription"></span>
+                    <span id="home">Subscription</span>
+                </div>
+            </div>
+            <hr>
+            <div class="you">
+                <div>
+                    <span>You</span>
+                    <span class="bi bi-caret-right"></span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/History.png" title="History"></span>
+                    <span id="home">History</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/playlist.png" title="Playlists"></span>
+                    <span id="home">Playlists</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/your-videos.png" title="Your videos"></span>
+                    <span id="home">Your videos</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/courses.png" title="Your courses"></span>
+                    <span id="home">Your courses</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/watch later.png" title="Watch later"></span>
+                    <span id="home">Watch Later</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/liked videos.png" title="Liked videos"></span>
+                    <span id="home">Liked videos</span>
+                </div>
+            </div> 
+            <hr>
+            <div class="Subscriptions">
+                <div>
+                    <span>Subscription</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/Nilered.png" title="History"></span>
+                    <span id="creators">NileRed</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/neonman.png" title="Playlists"></span>
+                    <span id="creators">Neon Man</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/sarthak.png" title="Your videos"></span>
+                    <span id="creators">Sarthak Goswami</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/fukrainsaan.png" title="Your courses"></span>
+                    <span id="creators">FUKRA INSAAN</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/flickverse.png" title="Watch later"></span>
+                    <span id="creators">FlickVerse</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/triggeredinsaan.png" title="Liked videos"></span>
+                    <span id="creators">Triggered Insaan</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/bnftv.png" title="Watch later"></span>
+                    <span id="creators">BnfTV</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/samay-raina.png" title="Liked videos"></span>
+                    <span id="creators">Samay Raina</span>
+                </div>
+                <div>
+                    <span id="chevron-down" class="bi bi-chevron-down"></span>
+                    <span id="Show">Show More</span>
+                </div>
+            </div>
+            <hr>
+            <div class="Explore">
+                <div>
+                    <span>Explore</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/trending.png" title="History"></span>
+                    <span id="home">Trending</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/shopping.png" title="Playlists"></span>
+                    <span id="home">Shopping</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/music.png" title="Your videos"></span>
+                    <span id="home">Music</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/films.png" title="Your courses"></span>
+                    <span id="home">Films</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/live.png" title="Watch later"></span>
+                    <span id="home">Live</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/gaming.png" title="Liked videos"></span>
+                    <span id="home">Games</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/news.png" title="Watch later"></span>
+                    <span id="home">News</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/sport.png" title="Liked videos"></span>
+                    <span id="home">Sport</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/courses.png" title="Watch later"></span>
+                    <span id="home">Courses</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/fashion.png" title="Liked videos"></span>
+                    <span id="home">Fashion & beauty</span>
+                </div>
+                <div>
+                    <span><img src="Public/Images/You Tube/podcast.png" title="Liked videos"></span>
+                    <span id="home">Podcasts</span>
+                </div>
+            </div>  
+        </section>
+        <section class="section2">
+            <article class="banner">
+                <img src="Public/Images/You Tube/Pw-Banner.png">
+            </article>
+        </section>
+        <section class="section3">
+            <div class="brand-name">
+                <span><img src="Public/Images/You Tube/Pw-Logo.png" alt="">
+                    <p class="p1">INSTITUTE OF</p>
+                    <p class="p2">INNOVATION</p>
+                 </span>
+            </div>
+            <div class="pwioi">PW Institute of Innovation</div>
+            <div class="subs">@PW-IOI | 8k subscribers | 215 videos </div>
+            <div class="about">at the PW Institute of Innovation, We bridge the gap between traditional college education <span class="more">...more</span></div>
+            <div class="links"><a href="https://pwioi.com/?utm_source=Youtube&utm_medium=Social&utm_campaign=Organic">pwioi.com/?utm_source=Youtube&utm_medium=Social&utm_campaign=Organic</a> and 8 more links </div>
+            <div class="bi bi-bell-fill">&nbsp;Subscribed &nbsp;<span class="bi bi-caret-down"></span></div>
+        </section>
+    </main>
+    <section class="section4">
+        <div class="content">
+            <span >Home</span>
+            <span >Videos</span>
+            <span >Shorts</span>
+            <span >Playlists</span>
+            <span >Community</span>
+            <span class="bi bi-search"></span>
+        </div>
+        <hr class="hr2">
+    </section>
+    <section class="section5">
+        <div class="for-you">
+            <div>For you</div>
+            <iframe width="379" height="210" src="https://www.youtube.com/embed/NBRwVMRZjTE?si=QdXMxFp0fYaxuiMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+            <iframe width="379" height="210" src="https://www.youtube.com/embed/MEyp8Qj0rGI?si=B6UinA14-argoyJr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="379" height="210" src="https://www.youtube.com/embed/a83NhDhT0z0?si=YfxfSqSIJhOKMPZJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <hr class="hr3">
+        <div class="shorts1">
+            <div>Shorts</div>
+            <iframe height="360" width="220" src="https://youtube.com/embed/kVAq12alEZ0?si=9dsutBzABLUKq60d"></iframe>
+            <iframe height="360" width="220" src="https://youtube.com/embed/Q2NDW_u3s4k?si=S4p19HSmJj34P2f0"></iframe>
+            <iframe height="360" width="220" src="https://youtube.com/embed/GywwEPtzI2M?si=8Bjq6ljvPeaiA-lk"></iframe>
+            <iframe height="360" width="220" src="https://youtube.com/embed/-jA5XJBIrXY?si=ClgKBUt1GZQovD75"></iframe>
+            <iframe height="360" width="220" src="https://youtube.com/embed/tFhoS5DlW4M?si=wtlrWrbhB8AVIopW"></iframe>
+        </div>
+        <div class="shorts2">
+            <iframe height="360" width="222" src="https://youtube.com/embed/JXAo75v4bDU?si=amdDWmfRLlgdUgmQ"></iframe>
+            <iframe height="360" width="222" src="https://youtube.com/embed/bCykxMKy-k8?si=CrzuYN1C6gjHGatN"></iframe>
+            <iframe height="360" width="222" src="https://youtube.com/embed/j6P07YEbBgA?si=dROr78GDlro2Tv96"></iframe>
+            <iframe height="360" width="222" src="https://youtube.com/embed/ZHr_wm_MKag?si=58GchKmYMR262dOT"></iframe>
+            <iframe height="360" width="222" src="https://youtube.com/embed/At1Q8wxqmU8?si=qjwcoE1INp-XOzF7"></iframe>
+        </div>
+        <hr class="hr3">
+    </section>
+</body>
+</html>

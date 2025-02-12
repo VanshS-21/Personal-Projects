@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="Public/Images/Amazon/amazon_logo_modified_b1E_icon.ico">
+</head>
+<style>
+    header{
+        display: flex;
+        background-color: #131A22;
+        margin-top: -10px;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 3px;
+    }
+    .logo img{
+        width:130px;
+        height: 40px;
+        padding-left: 10px;
+        padding-top: 8px;
+    }
+    .bi-geo-alt{
+        color: white;
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .address{
+        display: flex;
+        padding-left: 10px;
+        padding-top: 12px;
+    }
+    .host{
+        color: rgb(176, 176, 176);
+        font-size: 11px;
+        font-family: Arial;
+        font-weight: bolder;
+        padding-left: 1px;
+        letter-spacing: 0.6px;
+    }
+    .location{
+        color: white;
+        font-weight: 550;
+        font-family: Arial;
+        font-size: 14px;
+        padding-left: 1px;
+    }
+    .search-bar img{
+        width: 810px;
+        height: 42px;
+        padding-left: 25px;
+        padding-top: 6px;
+    }
+    .lang{
+        display: flex;
+        padding-left: 20px;
+        padding-top: -5px;
+    }
+    .lang img{
+        width: 22px;
+    }
+    .language{
+        color: white;
+        font-family: Arial;
+        padding-top: 17px;
+        padding-left: 2px;
+        font-size: 16px;
+    }
+    .dropdown1{
+        color: grey;
+        font-family: Arial;
+        padding-top: 25px;
+        font-size: 15px;
+        transform: scaleX(1.6);
+    }
+    .greetings{
+        padding-left: 18px;
+        padding-top: 11px;
+    }
+    .myname{
+        color: rgb(221, 219, 219);
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: 550;
+    }
+    .accounts{
+        color: white;
+        font-family: Arial;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+    .dropdown2{
+        color: grey;
+        font-family: Arial;
+        font-size: 15px;
+    }
+    .return-orders{
+        padding-left: 20px;
+        padding-top: 11px;
+    }
+    .return{
+        color: rgb(221, 219, 219);
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: 550;
+    }
+    .orders{
+        color: white;
+        font-family: Arial;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+    .cart{
+        color: white;
+        padding-top: 5px;
+    }
+    .bi-cart4{
+        font-size: 34px;
+        padding-left: 21px;
+    }
+    .carts{
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: 550;
+    }
+    .back-img img{
+        width: 100%;
+    }
+    section{
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+        margin-top: -24%;
+    }
+    .card{
+        background-color: white;
+        width: 94%;
+        margin: 3%;
+        padding-top: 10px;
+    }
+    .card-row{
+        display: flex;
+        margin-left: 42px;
+    }
+    .card-row figure{
+        margin-left: -25px;
+    }
+    .card-header{
+        font-size: 21px;
+        padding-left: 16px;
+        font-family: Arial;
+        font-weight: 600;
+    }
+    figcaption{
+        text-align: left;
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: 549;
+    }
+    .card-footer{
+        font-family: Arial;
+        color: rgb(3, 139, 184);
+        font-size: 13px;
+        padding-left: 17px;
+    }
+    .amazon-business img{
+        margin-top: -51px;
+        width: 110px;
+        padding-right: 15px;
+    }
+    .laptop-brands img{
+        width: 290px;
+        height: 265px;
+        padding-left: 33px;
+        padding-top: 20px;
+    }
+    .card-footer4{
+        font-family: Arial;
+        color: rgb(3, 139, 184);
+        font-size: 13px;
+        padding-left: 18px;
+        padding-top: 20px;
+    }
+    main{
+        background-color: rgb(203, 202, 202);
+    }
+    .section2{
+        display: grid;
+        grid-template-columns: 6fr 3fr 3fr;
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+    .Sec2img img{
+        width: 94%;
+        height: 100%;   
+    }
+    .S2card{
+        background-color: white;
+        width: 95%;
+        padding-top: 10px;
+        margin-left: 1px;
+    }
+    .S2body-img{
+        display: flex;
+        margin-left: 42px;
+    }
+    .S2body-img figure{
+        margin-left: -25px;
+    }
+    .S2card-footer{
+        font-family: Arial;
+        color: rgb(3, 139, 184);
+        font-size: 13px;
+        padding-left: 17px;
+    }
+    .S2body-img2 img{
+        width: 90%;
+        padding-left: 17px;
+        padding-top: 17px;
+    }
+    .S2card-footer2{
+        font-family: Arial;
+        color: rgb(3, 139, 184);
+        font-size: 13px;
+        padding-left: 17px;
+        padding-top: 30px;
+    }
+    .section3{
+        display: flex;
+        margin-top: 30px;
+        margin-left: 25px;
+        margin-right: 16px;
+        height: 260px;
+        background-color: white;
+    }
+    .S3card-header{
+        font-size: 21px;
+        padding-left: 20px;
+        font-family: Arial;
+        font-weight: 600;
+        padding-top: 20px;
+    }
+    .cloths img{
+        padding: 3.7px;
+        padding-left: 3.8px;
+    }
+    .section4{
+        display: flex;
+        margin-top: 30px;
+        margin-left: 25px;
+        margin-right: 16px;
+        background-color: white;
+        height: 250px;
+    }
+    .S4card-header{
+        font-size: 21px;
+        padding-left: 20px;
+        font-family: Arial;
+        font-weight: 600;
+        padding-top: 20px;
+    }
+    .Product img{
+        padding-top: 6px;
+        padding-left: 20px;
+        width: 182.5px;
+    }
+    .S4card-footer{
+        font-family: Arial;
+        color: rgb(3, 139, 184);
+        font-size: 13px;
+        padding-left: 10px;
+    }
+    .section5{
+        margin-top: 30px;
+        margin-left: 25px;
+        margin-right: 16px;
+        height: 255px;
+    }
+    .section5 img{
+        width: 900px;
+        padding-left: 280px;
+    }
+    .section6{
+        display: flex;
+        margin-top: 5px;
+        margin-left: 25px;
+        margin-right: 16px;
+        background-color: white;
+        height: 250px;
+    }
+    footer {
+      display: grid;
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+      background-color: #242e3a;
+      margin-left: -10px;
+      margin-bottom: -10px;
+      margin-right: -20px;
+      text-align: left;
+      padding: 50px;
+    }
+    .d-wrap {
+      display: flex;
+      text-align: center;
+    }
+    .fdata div {
+      font-size: 17px;
+      padding-bottom: 15px;
+      font-weight: 700;
+      font-family: poppins;
+      color: white;
+    }
+    .fdata span {
+      color: rgb(176, 175, 175);
+      display: block;
+      line-height: 1.7;
+      font-weight: 550;
+      font-family: "poppins";
+      font-size: 13px;
+    }
+    .footer-col{
+        padding: 0 20px;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Public/Images/Amazon/Screenshot 2024-11-22 200520.png" alt="Logo Not Loaded" title="Amazon Logo">
+        </div>
+        <div class="address">
+            <span class="bi bi-geo-alt"></span>
+            <span>
+                <div class="host">Deliver to Vansh</div>
+                <div class="location">Bengaluru 560066</div>
+            </span>
+        </div>
+        <div class="search-bar">
+            <img src="Public/Images/Amazon/Amazon Search Bar.png" alt="">
+        </div>
+        <div class="lang">
+            <img src="Public/Images/Amazon/india-flag-icon.svg" alt="Img Not Found">
+            <span class="language">EN</span>
+            <span class="dropdown1">&#9662;</span>
+        </div>
+        <div class="greetings">
+            <div class="myname">Hello, Vansh</div>
+            <div class="accounts">Account & Lists
+                <span class="dropdown2">&#9662;</span>
+            </div>
+        </div>
+        <div class="return-orders">
+            <div class="return">Returns</div>
+            <div class="orders">& Orders</div>
+        </div>
+        <div class="cart">
+            <span class="bi bi-cart4"></span>
+            <span class="carts">Cart</span>
+        </div>
+    </header>
+    <main>
+        <div class="back-img">
+            <img src="Public/Images/Amazon/AmaZon_BAckground2_upscaled.jpg" alt="Image Not Found">
+        </div>
+        <section>
+                <div class="card">
+                    <div class="card-header">
+                        Revamp your home in style
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/cardimg5.jpg" alt="Image Not Found" width="150" height="115px" title="Image Of Bedsheet, Pillow & Cover">
+                            <figcaption>Cushion covers, bedsheets<br> & more</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Public/Images/Card/cardimg3.jpg" alt="Image Not Found" width="150" height="115px" title="Figurines, vases & more">
+                            <figcaption>Figurines, vases & more</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/cardimg2.jpg" alt="Image Not Found" width="150" height="115px" title="Home storage">
+                            <figcaption>Home storage</figcaption>
+                        </figure>
+                            <figure>
+                                <img src="Public/Images/Card/cardimg4.jpg" alt="Image Not Found" width="150" height="115px" title="Lighting solutions">
+                                <figcaption>Lighting solutions</figcaption>
+                            </figure>
+                    </div>
+                    <div class="card-footer">Explore all</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Top mobile accessories for your smartphone
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/Headsets.png" alt="Image Not Found" width="150" height="115px" title="Headsets">
+                            <figcaption>Headets</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Public/Images/Card/Cables and chargers.png" alt="Image Not Found" width="150" height="115px" title="Cables and chargers">
+                            <figcaption>Cables and chargers</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/Cases and Cover.png" alt="Image Not Found" width="150" height="115px" title="Cases and covers">
+                            <figcaption>Cases and covers</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Public/Images/Card/Powerbanks.png" alt="Image Not Found" width="150" height="115px" title="Powerbanks">
+                            <figcaption>Powerbanks</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-footer">See all offers</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Up to 60% off | Footwear & handbags
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/Sports shoes.png" alt="Image Not Found" width="150" height="115px" title="Sport shoes">
+                            <figcaption>Sport shoes</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Public/Images/Card/men's shoes.png" alt="Image Not Found" width="150" height="115px" title="Men's shoes">
+                            <figcaption>Men's shoes</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-row">
+                        <figure>
+                            <img src="Public/Images/Card/Women shoes.png" alt="Image Not Found" width="150" height="115px" title="Women's shoes">
+                            <figcaption>Women's shoes</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="Public/Images/Card/handbags.png" alt="Image Not Found" width="150" height="115px" title="Handbags">
+                            <figcaption>Handbags</figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-footer">See all offers</div>              
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        10% extra cashback <br> on business value <br> days 
+                        <span class="amazon-business"><img src="Public/Images/Amazon/Amazon Bussiness.png" alt="Image Not Found" align="right"></span>
+                    </div>
+                    <div class="card-footer4">Register now</div>
+                    <div class="laptop-brands">
+                        <img src="Public/Images/Amazon/Laptop Brands.png" alt="">
+                    </div>              
+                </div>
+        </section>
+        <section class="section2">
+            <div class="Sec2img">
+                <img src="Public/Images/Amazon/Amazon-Little Krishna img.png" alt="">
+            </div>
+            <div class="S2card">
+                <div class="card-header">Up to 75% off | Headphones</div>
+                <div class="S2body-img2">
+                    <img src="Public/Images/Amazon/Earbuds.png" alt="">
+                </div>
+                <div class="S2card-footer2">Shop Now</div>
+            </div>
+            <div class="S2card">
+                <div class="card-header">
+                    Up to 60% off | Furniture & <br> mattresses
+                </div>
+                <div class="S2body-img">
+                    <figure>
+                        <img src="Public/Images/Amazon/Mattresses & more.png" alt="Image Not Found" width="150" height="115px" title="Mattresses & more">
+                        <figcaption>Mattresses & more</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Public/Images/Amazon/Office chairs and more.png" alt="Image Not Found" width="150" height="115px" title="Office chairs & more">
+                        <figcaption>Office chairs & more</figcaption>
+                    </figure>
+                </div>
+                <div class="S2body-img">
+                    <figure>
+                        <img src="Public/Images/Amazon/Sofas and more.png" alt="Image Not Found" width="150" height="115px" title="Sofas & more">
+                        <figcaption>Sofas & more</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="Public/Images/Amazon/Bean bags & more.png" alt="Image Not Found" width="150" height="115px" title="Bean bags & more">
+                        <figcaption>Bean bags & more</figcaption>
+                    </figure>
+                </div>
+                <div class="S2card-footer">Explore all</div>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="Clothing">
+                <div class="S3card-header">Best Sellers in Clothing & Accessories</div>
+                <div class="cloths">
+                    <img src="Public/Images/Amazon/Amazon Clothing 4.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing 8.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing 7.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing 6.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing 3.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing Gloves.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing Jacket.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Clothing 5.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="Products">
+                <div class="S4card-header">Up to 60% off | Unique products from stores nearby
+                    <span class="S4card-footer">See all offers</span>
+                </div>
+                <div class="Product">
+                    <img src="Public/Images/Amazon/Amazon Products 1.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 2.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 3.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 4.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 5.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 6.jpg" alt="">
+                    <img src="Public/Images/Amazon/Amazon Products 7.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section5">
+            <div class="Ad">
+                <img src="Public/Images/Amazon/Amazon Ad Sponsered.jpg" alt="">
+            </div>
+        </section>
+        <hr>
+        <footer>
+            <div class="fdata footer-col">
+                <div>Get to Know <br> Us</div>
+                <span>About Amazon</span>
+                <span>Careers</span>
+                <span>Press Release</span>
+                <span>Amazon Science</span>
+              </div>
+              <div class="fdata footer-col">
+                <div>Connect with Us</div>
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+              </div>
+              <div class="fdata footer-col">
+                <div>Make Money with <br> Us</div>
+                <span>Sell on Amazon</span>
+                <span>Sell under Amazon Accelerator</span>
+                <span>Protect and Build Your Brand</span>
+                <span>Amazon Global Selling</span>
+                <span>Supply to Amazon</span>
+                <span>Become and Affiliate</span>
+                <span>Fulfilment by Amazon</span>
+                <span>Advertise Your Products</span>
+                <span>Amazon Pay on Merchants</span>
+              </div>
+              <div class="fdata footer-col">
+                <div>Let Us Help You</div>
+                <span>Returns Centre</span>
+                <span>Recalls and Product Safety Alerts</span>
+                <span>100% Purchase Protection</span>
+                <span>Amazon App Download</span>
+                <span>Help</span>
+              </div>        
+        </footer>
+    </main>
+</body>
+</html>
